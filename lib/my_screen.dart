@@ -36,38 +36,34 @@ class MyScreen extends StatelessWidget {
                         ),
                         const CircleAvatar(
                           radius: 45,
+                          backgroundImage: AssetImage('assets/14.jpeg'),
                         ),
-                        const SizedBox(height: 10,),
+                        const SizedBox(
+                          height: 10,
+                        ),
                         Text(
                           '$name',
-                          style: const TextStyle(
-                              fontSize: 30, color: Colors.cyan),
+                          style:
+                              const TextStyle(fontSize: 30, color: Colors.cyan),
                         ),
                         Text('$proff'),
-                        const SizedBox(height: 50,),
+                        const SizedBox(
+                          height: 50,
+                        ),
                         const Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('8900'),
-                                Text('Income')
-                              ],
+                              children: [Text('8900'), Text('Income')],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('5600'),
-                                Text('Outcome')
-                              ],
+                              children: [Text('5600'), Text('Outcome')],
                             ),
                             Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text('200'),
-                                Text('loan')
-                              ],
+                              children: [Text('200'), Text('loan')],
                             ),
                           ],
                         )
@@ -75,7 +71,24 @@ class MyScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-
+                SizedBox(
+                  height: 50,
+                ),
+                // Container(
+                //   height: 150,
+                //   width: 200,
+                //   color: Colors.deepPurple,
+                //   child: Image.asset(
+                //     'assets/14.jpeg',
+                //     fit: BoxFit.fill,
+                //   ),
+                // ),
+                Container(
+                  height: 200,
+                  color: Colors.deepPurple,
+                  child: Image.network(
+                      'https://flutter.github.io/assets-for-api-docs/assets/widgets/owl.jpg', fit: BoxFit.fill,),
+                )
               ],
             ),
           ),
