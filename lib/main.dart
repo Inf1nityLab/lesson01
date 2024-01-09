@@ -1,7 +1,10 @@
 
 import 'dart:convert';
 
+import 'package:book/if_screen.dart';
 import 'package:book/lesson03.dart';
+import 'package:book/lesson04.dart';
+import 'package:book/lesson05.dart';
 import 'package:book/my_screen.dart';
 import 'package:book/new_screen.dart';
 import 'package:book/our_screen.dart';
@@ -20,10 +23,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyScreen(),
+      home: const Lesson05(),
     );
   }
 }
