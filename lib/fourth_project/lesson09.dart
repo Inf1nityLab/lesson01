@@ -50,6 +50,10 @@ class FirstScreen extends StatelessWidget {
           height: 100,
           color: Colors.yellow,
           child: ListTile(
+            leading: const CircleAvatar(
+              radius: 40,
+              backgroundImage: AssetImage('assets/14.jpeg'),
+            ),
             title: Text('$index'),
           ),
         ),
@@ -83,8 +87,6 @@ class ThirdScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('3 screen'),
-    );
+    return Image.asset('assets/14.jpeg', height: 300, width: 300,);
   }
 }
