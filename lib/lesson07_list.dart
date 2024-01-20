@@ -12,7 +12,8 @@ class _ToDoScreenState extends State<ToDoScreen> {
     'Learn flutter',
     'To do homework',
     'Clean at',
-    'Wash the car'
+    'Wash the car',
+
   ];
 
   TextEditingController addController = TextEditingController();
@@ -46,11 +47,14 @@ class _ToDoScreenState extends State<ToDoScreen> {
     return Scaffold(
       body: SafeArea(
         child: ListView.builder(
+          scrollDirection: Axis.vertical,
             itemCount: tasks.length,
             itemBuilder: (context, index) {
               return ListTile(
+                onTap: (){},
+                selectedColor: Colors.primaries[index],
                 leading: CircleAvatar(radius: 40, child: Text('$index'),),
-                title: Text('${tasks[index]}', style: const TextStyle(fontSize: 30),),
+                title: Text('${tasks[index]}', style: const TextStyle(fontSize: 30), maxLines: 6,),
                 subtitle: const Text('task'),
                 trailing: SizedBox(
                   width: 100,
