@@ -29,7 +29,14 @@ class _MainScreenState extends State<MainScreen> {
       ),
       body: screens.elementAt(_currentIndex),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return _buildBottomSheetContent();
+            },
+          );
+        },
         child: const Icon(Icons.format_list_numbered_sharp),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -51,4 +58,18 @@ class _MainScreenState extends State<MainScreen> {
       ),
     );
   }
+
+  Widget _buildBottomSheetContent() {
+    return Container(
+      height: 300,
+      color: Colors.white,
+      child:  TextField(
+        keyboardType: TextInputType.number,
+        decoration: InputDecoration(
+          suffixIcon: IconButton(onPressed: (){}, icon: const Icon(Icons.cancel_schedule_send))
+        ),
+      ),
+    );
+  }
+
 }

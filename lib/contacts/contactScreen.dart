@@ -1,3 +1,5 @@
+import 'package:book/contacts/add_contact_screen.dart';
+import 'package:book/contacts/data/contact_model.dart';
 import 'package:flutter/material.dart';
 
 class ContactScreen extends StatelessWidget {
@@ -7,28 +9,33 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.only(left: 10),
+         Padding(
+          padding: EdgeInsets.only(left: 10),
           child: SizedBox(
             height: 70,
-            child: Row(
-              children: [
-                IconButton(onPressed: (){}, icon: const Icon(Icons.person_add_sharp),),
-                TextButton(onPressed: (){}, child: const Text('создать контакт'))
-              ],
+            child: InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>const AddScreen()));
+              },
+              child: Row(
+                children: [
+                  Icon(Icons.person_add_sharp),
+                  Text('создать контакт'),
+                ],
+              ),
             ),
           ),
         ),
         Expanded(
           child: ListView.builder(
-              itemCount: 10,
+              itemCount: numbers.length,
               itemBuilder: (context, index) {
                 return ListTile(
                   leading: CircleAvatar(
                     backgroundColor: Colors.blue,
                     child: Text('$index'),
                   ),
-                  title: const Text('Baiastan'),
+                  title: Text('${numbers[index].name}'),
                 );
               }),
         )
