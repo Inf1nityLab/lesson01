@@ -20,6 +20,10 @@ class _ToDoScreenState extends State<ToDoScreen> {
   TextEditingController updateController = TextEditingController();
 
   //CRUD
+  // Create
+  //read
+  //Update
+  // Delete
 
   void create() {
     setState(() {
