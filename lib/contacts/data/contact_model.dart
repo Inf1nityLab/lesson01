@@ -1,15 +1,14 @@
 
+import 'package:hive/hive.dart';
+part 'contact_model.g.dart';
 
+@HiveType(typeId: 2)
 class ContactModel{
+  @HiveField(0)
   final String name;
+  @HiveField(1)
   final String number;
 
-  ContactModel({required this.name, required this.number});
+  ContactModel(this.name, this.number);
 }
 
-List<ContactModel> numbers = [
-  ContactModel(name: 'Baias', number: '0709358767'),
-  ContactModel(name: 'Sanjar', number: '0709123456'),
-  ContactModel(name: 'Shirin', number: '0709358767'),
-  ContactModel(name: 'Beremt', number: '0709358767'),
-];

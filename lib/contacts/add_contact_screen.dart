@@ -1,5 +1,7 @@
 import 'package:book/contacts/data/contact_model.dart';
+import 'package:book/contacts/service/contact_service.dart';
 import 'package:flutter/material.dart';
+import 'compas/compas.dart';
 
 class AddScreen extends StatefulWidget {
   const AddScreen({super.key});
@@ -10,14 +12,8 @@ class AddScreen extends StatefulWidget {
 
 class _AddScreenState extends State<AddScreen> {
   TextEditingController nameController = TextEditingController();
+  final ContactService _contactService = compas<ContactService>();
 
-  void addName(){
-    setState(() {
-      ContactModel name = ContactModel(name: nameController.text, number: '');
-      numbers.add(name);
-    });
-    Navigator.pop(context);
-  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,7 +31,13 @@ class _AddScreenState extends State<AddScreen> {
             height: 40,
             child: ElevatedButton(
                 onPressed: () {
-                  addName();
+                  if(nameController.text.isNotEmpty){
+                    var name = ContactModel(nameController.text, 'numberController.text');
+                    _contactService.add(name);
+                    Navigator.pop(context);
+                  } else{
+                    print('Our data is empty');
+                  }
                 },
                 style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.amberAccent),
@@ -72,6 +74,7 @@ class _AddScreenState extends State<AddScreen> {
             ],
           ),
           // homework второй textfield
+          // numberControlerr
         ],
       ),
     );

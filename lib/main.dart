@@ -1,6 +1,7 @@
-
 import 'dart:convert';
 
+import 'package:book/contacts/compas/compas.dart';
+import 'package:book/contacts/data/contact_model.dart';
 import 'package:book/contacts/main_screen.dart';
 import 'package:book/fifth_project/data_map.dart';
 import 'package:book/fifth_project/lesson_10_dictionary.dart';
@@ -26,11 +27,13 @@ import 'new_project/locator.dart';
 import 'new_project/to_do_model.dart';
 
 void main() async {
+  // Оставить
   WidgetsFlutterBinding.ensureInitialized();
+  // Оставить
   await Hive.initFlutter();
-  Hive.registerAdapter(ToDoModelAdapter());
+  Hive.registerAdapter(ContactModelAdapter());
 
-  setupLocator();
+  compasLocator();
   runApp(const MyApp());
 }
 
@@ -46,13 +49,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  ToDoNewProject(),
+      home: const MainScreen(),
     );
   }
 }
-
-
-
-
-
-

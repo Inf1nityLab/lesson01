@@ -12,10 +12,10 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  List<Widget> screens = const [
-    FavoriteScreen(), //0
-    RecentScreen(), //1
-    ContactScreen() //2
+  List<Widget> screens =  [
+    const FavoriteScreen(), //0
+    const RecentScreen(), //1
+    Contacts() //2
   ];
 
   int _currentIndex = 2;
